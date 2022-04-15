@@ -1,0 +1,99 @@
+/* -------------------------------- Laptop-View --------------------------------- */
+@media (max-width:991px){
+    .input-search{
+        border-radius:20px !important;
+    }
+
+    .hero-date1{
+        border:none !important;
+    }
+
+    .hero-search{
+        padding-top:20px !important;
+        padding-bottom:20px !important;
+        border-bottom:1px solid #DEDEDE;
+        
+    }
+
+    .hero-serach-icon{
+        top:20px !important;
+    }
+
+    .hero-search2{
+        padding-top:20px !important;
+        padding-bottom:20px !important;
+        border-bottom:1px solid #DEDEDE;
+    }
+
+    .input-search .btn-customs {
+        margin-top:20px;
+    }
+
+    .menu-link a{
+        padding:10px 0;
+    }
+
+    .navbar-nav button{
+        margin-top:10px;
+    }
+
+    .tab-links{
+        width:100%;
+        white-space: nowrap;
+        overflow-x: auto;
+       
+    }
+
+    .bottom-hero-content{
+        padding:40px 0;
+    }
+}
+
+/* -------------------------------- Tablet View --------------------------------- */
+@media (max-width:767px){
+    .hero-content{
+        padding-top:100px;
+    }
+
+    .hero-content h1{
+        font-size:40px;
+    }
+
+    .card-image-main img{
+        border-radius:20px 20px 0 0;
+    }
+
+    .tour-card-data-date h4{
+        margin-bottom:15px;
+    }
+
+    .footer-bg{
+        text-align:center;
+    }
+
+    .footer-link{
+        margin-top:20px;
+        margin-bottom:20px;
+        line-height:2;
+    }
+
+    .reset-pass-content{
+        padding:10px !important;
+    }
+
+}
+
+
+/* -------------------------------- mobile View --------------------------------- */
+@media (max-width:575px){
+ 
+
+    .hero-content h1{
+        font-size:30px;
+    }
+
+    .form-hero-button{
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+}

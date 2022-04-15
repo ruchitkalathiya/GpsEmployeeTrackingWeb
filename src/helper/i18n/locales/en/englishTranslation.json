@@ -1,0 +1,141 @@
+{
+    "Hello": "Hello",
+    "Select_Language": "Select Language",
+    "Dashboard": "Dashboard",
+
+    "Details": "Details",
+
+    "signUp": {
+        "Sign_Up": "Sign Up",
+        "Name": "Name",
+        "Username": "Nickname",
+        "Email": "Email Address",
+        "Password": "Password",
+        "Confirm_Password": "Confirm Password",
+        "Country": "Country/Region",
+        "Gender": "Gender",
+        "DOB": "Date of Birth",
+        "Phone_Number": "Phone Number",   
+        "Send_Verification_Code": "Send Verification Code",
+        "Verify": "Verify",
+        
+        "Placeholder": {
+            "First_Name": "First Name",
+            "Last_Name": "Last Name",
+            "Username": "This is how your name will appear on Compastrips",
+            "Email": "Email Address",
+            "Password": "8-16 characters and combination of letters and numbers",
+            "Confirm_Password": "Confirm Password",
+            "Country": "Select your nationality",
+            "Gender": "Select your Gender",
+            "Select": "Select",
+            "Verification_Code": "Verification Code",
+            "Phone_Number": "Enter your phone number",
+            "Already_have_account": "Already have an account?"
+        },
+
+        "Terms": {
+            "Agree": "By selecting, I agree to the statement below",
+            "Term_of_use": "Terms of use(Required)",
+            "Privacy_and_Cookie": "Privacy and Cookie Statement(Required)"
+        },
+
+        "Errors": {
+            "First_Name": "Enter your first name",
+            "Last_Name": "Enter your last name",
+            "Username": "Enter your username",
+            "Email": "Enter a valid email address",
+            "Password": "Password must be between 8-16 characters and a combination of letters and numbers",
+            "Confirm_Password": "Password does not match",
+            "Country": "Select your nationality",
+            "Gender": "Select your gender",
+            "DOB": "Enter your date of birth",
+            "Phone_Number": "Please verify your phone number"
+        }
+
+    },
+
+
+
+    "Welcome": {
+        "Welcome": "Welcome!",
+        "Hi": "Hi",
+        "Success": "Your sign up process has been successfully completed. Now, log in to discover tours and meet new friends from around the world at Compastrips!"
+    },
+
+
+
+    "logIn": {
+        "Log_In": "Log In",
+        "Email": "Email Address",
+        "Password": "Password",
+        "Keep_me_signin": "Keep me signed in",
+        "Save_email_add": "Save email address",
+        "Forgot_Password": "Forgot your password?",
+        "Dont_have_acc": "Don't have account?",
+
+        "Placeholder": {
+            "Email": "Email Address",
+            "Password": "8-16 characters and combination of letters and numbers"
+        },
+
+        "Errors": {
+            "Email": "Invalid email address",
+            "Password": "Incorrect password",
+            "IncorrectPass": "Incorrect Password"
+        }
+    },
+
+
+    "Reset_Password": {
+        "Reset_Password": "Reset Password",
+        "Enter_registered_email": "Enter your registered email address below, we will email you a link to reset your password.",
+        "Email": "Email Address",
+        "Send_reset_link": "Send Reset Link",
+        "Password_reset_email_sent": "Password reset email sent successfully",
+
+        "Placeholder": {
+            "Email": "Email Address"
+        },
+
+        "Errors": {
+            "Email": "Invalid email address",
+            "User_Not_Found": "User does not exists"
+        }
+    },
+
+
+    "Homepage": {
+        "Hero": {
+            "Title1": "Find a Tour and",
+            "Title2": "Meet New Friends",
+            "Search_Placeholder": "Where do you want to go?",
+            "From": "From",
+            "Until": "Until",
+            "Find_Tours": "Find Tours",
+            "View_Hosts": "View Hosts",
+            "Host_MyOwn": "Host My Own"
+        },
+
+        "Popular_Destination": "Popular Destinations",
+
+        "Popular_Hosts": "Popular Hosts",
+
+        "NavBar": {
+            "All": "All",
+            "Local_Picks": "Local Picks",
+            "Festivals": "Festivals & Events",
+            "Popular": "Popular"
+        }
+        
+    },
+
+    "Footer": {
+        "Terms_of_Use": "Terms of Use",
+        "Privacy_Policy": "Privacy Policy",
+        "Inquiries": "Inquiries",
+        "Customer_Service": "Customer Service",
+        "Service_Introduction": "Service Introduction"
+    }
+}
+

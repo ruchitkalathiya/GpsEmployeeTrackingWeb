@@ -1,0 +1,134 @@
+{
+    "Hello": "안녕하세요",
+    "Select_Language": "언어 선택",
+    "Dashboard": "계기반",
+
+
+    "signUp": {
+        "Sign_Up": "회원가입",
+        "Name": "이름",
+        "Username": "닉네임",
+        "Email": "이메일 주소",
+        "Password": "비밀번호",
+        "Confirm_Password": "비밀번호 확인",
+        "Country": "국적",
+        "Gender": "성별",
+        "DOB": "생년월일",
+        "Phone_Number": "휴대폰번호",
+        "Send_Verification_Code": "인증번호 전송",
+        "Select": "국가 선택",
+        "Verify": "인증번호 확인",
+
+        "Placeholder": {
+            "First_Name": "이름을 입력해주세요.",
+            "Last_Name": "성을 입력해주세요.",
+            "Username": "다른 사용자에게 보여줄 사용자명(10자이내)을 입력해 주세요.",
+            "Email": "이메일 주소를 입력해 주세요.",
+            "Password": "영문, 숫자 혼합 8~16자로 입력해 주세요.",
+            "Confirm_Password": "비밀번호를 한 번 더 입력해 주세요.",
+            "Country": "국적을 선택해주세요.",
+            "Gender": "성별을 선택해주세요.",
+            "Select": "국가 선택",
+            "Verification_Code": "인증번호 입력해주세요.",
+            "Phone_Number": "휴대폰 번호를 입력해 주세요.",
+            "Already_have_account": "이미 회원이신가요?"
+        },
+
+        "Terms": {
+            "Agree": "아래 약관에 모두 동의합니다.",
+            "Term_of_use": "서비스 이용약관 동의 (필수)  내용보기",
+            "Privacy_and_Cookie": "개인정보 수집 및 이용 동의 (필수)  내용보기"
+        },
+
+        "Errors": {
+            "First_Name": "이름을 입력해 주세요.",
+            "Last_Name": "성을 입력해 주세요.",
+            "Username": "닉네임을 입력해 주세요.",
+            "Email": "이메일 형식에 맞게 입력해 주세요.",
+            "Password": "영문, 숫자 혼합 8~16자로 입력해 주세요.",
+            "Confirm_Password": "비밀번호가 일치하지 않습니다. 정확하게 입력하여 주세요. ",
+            "Country": "국적을 선택해주세요.",
+            "Gender": "성별을 선택해주세요.",
+            "DOB": "생년월일을 입력해 주세요.",
+            "Phone_Number": "휴대폰 인증을 진행해 주세요."
+        }
+    },
+
+
+    "Welcome": {
+        "Welcome": "회원가입 완료",
+        "Hi": "홍수아님,",
+        "Success": "compastrips 회원가입이 완료되었습니다. 로그인 하여 compastrips 의 서비스를 이용해 보세요. "
+    },
+
+
+    "logIn": {
+        "Log_In": "로그인",
+        "Email": "이메일 주소",
+        "Password": "비밀번호",
+        "Keep_me_signin": "로그인 상태 유지",
+        "Save_email_add": "이메일 주소 저장",
+        "Forgot_Password": "비밀번호 찾기",
+        "Dont_have_acc": "아직 회원이 아니신가요?",
+
+        "Placeholder": {
+            "Email": "이메일 주소를 입력해 주세요.",
+            "Password": "영문, 숫자 혼합 8~16자로 입력해 주세요."
+        },
+
+        "Errors": {
+            "Email": "이 이메일로 가입된 계정이 없습니다. 다시 확인해 주세요.",
+            "Password": "비밀번호가 맞지 않습니다. 다시 시도해 주세요.",
+            "IncorrectPass": "잘못된 비밀번호"
+        }
+    },
+
+    "Reset_Password": {
+        "Reset_Password": "비밀번호 찾기",
+        "Enter_registered_email": "가입했던 이메일 주소를 입력해 주세요. 비밀번호 재설정 링크를 전송해 드립니다.",
+        "Email": "이메일 주소",
+        "Send_reset_link": "재설정 링크 전송",
+        "Password_reset_email_sent": "재설정 링크가 메일로 전송되었습니다.",
+
+        "Placeholder": {
+            "Email": "이메일 주소를 입력해 주세요."
+        },
+
+        "Errors": {
+            "Email": "이 이메일로 가입된 계정이 없습니다. 다시 확인해 주세요. ",
+            "User_Not_Found" :"사용자가 존재하지 않습니다"
+        }
+    },
+
+    "Homepage": {
+        "Hero": {
+            "Title1": "여행일정을 찾고",
+            "Title2": "새로운 친구를 만나세요",
+            "Search_Placeholder": "도시나 장소명 으로 검색해 보세요",
+            "From": "시작날짜",
+            "Until": "종료날짜",
+            "Find_Tours": "여행찾기",
+            "View_Hosts": "호스트로 보기",
+            "Host_MyOwn": "여행일정 만들기"
+        },
+
+        "Popular_Destination": "인기 여행지",
+
+        "Popular_Hosts": "인기 호스트",
+
+        "NavBar": {
+            "All": "전체",
+            "Local_Picks": "현지인만 아는",
+            "Festivals": "축제와 이벤트",
+            "Popular": "인기명소"
+        }
+    },
+
+    "Footer": {
+        "Terms_of_Use": "이용약관",
+        "Privacy_Policy": "개인정보 처리방침",
+        "Inquiries": "제휴문의",
+        "Customer_Service": "고객센터",
+        "Service_Introduction": "서비스 소개"
+    }
+}
