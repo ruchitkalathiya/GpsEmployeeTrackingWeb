@@ -14,7 +14,7 @@ const Layout: FC<Props> = ({ children, ...props }) => (
         <AuthHeader /> 
         : <Header /> }
         <div {...props}>{children}</div>
-        {/* <Footer/> */}
+        <Footer/>
     </div>
 );
 

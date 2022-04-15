@@ -47,11 +47,27 @@ const AuthHeader: React.FC =() => {
                                 </Buttons> */}
 
                                 <div className="footer-link">
-                                    <Link to="/dashboard">{'Add Employee'}</Link>
-                                    <Link to="/viewloaction">{'View Location'}</Link>
-                                    <Link to="/Viewimage">{'View Image'}</Link>
-                                    {/* <Link to="/">{'Change Password'}</Link> */}
-                                    <Link to="/" onClick={()=> AuthStorage.deauthenticateUser()}>{'Logout'}</Link>
+                                {console.log("Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiinnn",localStorage.getItem("Logincreantials"))}
+                                    {
+                                        
+                                        (localStorage.getItem("Logincreantials")=="admin")?(
+                                            <>
+                                            <Link to="/dashboard">{'Add Employee'}</Link>
+                                            <Link to="/viewloaction">{'View Location'}</Link>
+                                            <Link to="/Viewimage">{'View Image'}</Link>
+                                            {/* <Link to="/">{'Change Password'}</Link> */}
+                                            <Link to="/" onClick={()=> AuthStorage.deauthenticateUser()}>{'Logout'}</Link>
+                                            </>
+                                        ):(
+                                            <>
+                                            {/* <Link to="/dashboard">{'Add Employee'}</Link> */}
+                                            <Link to="/viewloaction">{'View Location'}</Link>
+                                            <Link to="/Viewimage">{'View Image'}</Link>
+                                            {/* <Link to="/">{'Change Password'}</Link> */}
+                                            <Link to="/" onClick={()=> AuthStorage.deauthenticateUser()}>{'Logout'}</Link>
+                                            </>
+                                        )
+                                    }
                                 </div>
                             </Nav>
                         </Navbar.Collapse>

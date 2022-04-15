@@ -279,6 +279,12 @@ function Tourlist() {
                                         </div>
                                     </div>
 
+                                    <div className="d-md-flex w-100">
+                                        <div className="tour-card-data">
+                                            <h4>Salary{':-'}{items?.employeeselery}</h4>
+                                        </div>
+                                    </div>
+
                                     
     
                                     <div className="d-flex w-100">

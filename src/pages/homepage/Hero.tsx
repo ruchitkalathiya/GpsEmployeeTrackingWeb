@@ -100,6 +100,8 @@ const [value, onChange] = useState(new Date());
     const [isVerified, setIsVerified] = useState(false);
 
     const [loginpopup, setloginpopup] = useState(false);
+
+    const [HRloginpopup, setHRloginpopup] = useState(false);
     const [forgotpasspopup, setforgotpasspopup] = useState(false);
 
     const [terms, setTerms] = useState(false);
@@ -380,6 +382,7 @@ const [value, onChange] = useState(new Date());
                     console.log(response);
                     setStatelogin(loginCredential);
                     AuthStorage.setStorageData(STORAGEKEY.token, response.data.accessToken, keepMeLogin);
+                    localStorage.setItem("Logincreantials", "admin");
                     delete response.data.accessToken;
                     AuthStorage.setStorageJsonData(STORAGEKEY.userData, response.data.accessToken, keepMeLogin);
                     setloginpopup(false);
@@ -394,6 +397,51 @@ const [value, onChange] = useState(new Date());
         
     }
     //----------
+
+    const Loginhr = () => {
+        setIsLoginSubmit(true)
+        if (!loginValidation()) {
+            return
+        }
+
+        // ApiPost('user/auth/login', {
+        //     email: statelogin.email,
+        //     password: statelogin.pass
+        // }).then((res: any) => {
+        //     setStatelogin(loginCredential);
+        //     AuthStorage.setStorageData(STORAGEKEY.token, res.data.token, keepMeLogin);
+        //     delete res.data.token;
+        //     AuthStorage.setStorageJsonData(STORAGEKEY.userData, res.data, keepMeLogin);
+        //     // setloginpopup(false);
+        //     history.push("/");
+        // })
+        // .catch((error) => {
+        //     setIncorrectPass(`${t ('logIn.Errors.IncorrectPass')}`)
+        // });
+
+        Axios.post('http://192.168.56.1:5000/api/auth/signin', {
+            userid: statelogin.email,
+            password: statelogin.pass
+          })
+          .then(function (response) {
+                if(response.data.status=="success"){
+                    console.log(response);
+                    setStatelogin(loginCredential);
+                    AuthStorage.setStorageData(STORAGEKEY.token, response.data.accessToken, keepMeLogin);
+                    localStorage.setItem("Logincreantials", "HR");
+                    delete response.data.accessToken;
+                    AuthStorage.setStorageJsonData(STORAGEKEY.userData, response.data.accessToken, keepMeLogin);
+                    setHRloginpopup(false);
+                    history.push("/viewloaction");
+                }
+          })
+          .catch(function (error) {
+                setIncorrectPass(`${t ('logIn.Errors.IncorrectPass')}`)
+          });
+
+        console.log(statelogin.email);
+        
+    }
 
     //Resetpassword---------
     const [resetpassError, setResetpassError] = useState('')
@@ -454,6 +502,13 @@ const [value, onChange] = useState(new Date());
         setFormError(resetFormError)
         setsignuppopup(false)
         setloginpopup(true)
+        setwelcome(false)
+    }
+
+    const loginbtnnew = () => {
+        setFormError(resetFormError)
+        setsignuppopup(false)
+        setHRloginpopup(true)
         setwelcome(false)
     }
 
@@ -995,16 +1050,108 @@ const [value, onChange] = useState(new Date());
                 </Modal.Header>
                 <Modal.Body>
                     <div className="modal-signup-title ">
-                        <h3>{t('logIn.Log_In')}</h3>
+                        <h3>Admin Login</h3>
                     </div>
                     <Row>
                         <Col md={12}>
                             <InputField
-                                label={t('logIn.Email')}
+                                label={t('Id')}
                                 fromrowStyleclass="mt-2"
                                 name="email"
                                 value={statelogin.email}
-                                placeholder={t('logIn.Placeholder.Email')}
+                                placeholder={t('Id')}
+                                type="text"
+                                InputstyleClass={loginErrors.emailError ? "custom-input mb-0 danger-border" : "custom-input mb-0"}
+                                lablestyleClass="label-input-style"
+                                onChange={(e: any) => { handleChange(e) }}
+                            />
+                            {loginErrors.emailError &&
+                                <p className="text-danger">{loginErrors.emailError}</p>
+                            }
+                        </Col>
+
+                        <Col md={12}>
+                            <InputField
+                                label={t('logIn.Password')}
+                                fromrowStyleclass="mt-2"
+                                name="pass"
+                                value={statelogin.pass}
+                                placeholder={t('logIn.Placeholder.Password')}
+                                type="password"
+                                InputstyleClass={loginErrors.passError ? "custom-input mb-0 danger-border" : "custom-input mb-0"}
+                                lablestyleClass="label-input-style"
+                                onChange={(e: any) => { handleChange(e) }}
+                            />
+                            {loginErrors.passError &&
+                                <p className="text-danger">{loginErrors.passError}</p>
+                            }
+                            {incorrectPass &&
+                                <p className="text-danger">{incorrectPass}</p>
+                            }
+                        </Col>
+
+                        <Col md={12} className="text-center mt-4">
+                            <Buttons ButtonStyle="trans-btn" onClick={() => { forgotpassmodal() }}>{t('logIn.Forgot_Password')}</Buttons>
+                        </Col>
+
+                        <Col md={6} className="mt-4 login-form-modal">
+                            <CheckBox
+                                label={t('logIn.Keep_me_signin')}
+                                type="checkbox"
+                                name="agree"
+                                id="agree"
+                                value="agree"
+                                styleCheck="checkmark"
+                                onChange={(e: any) => { setKeepMeLogin(true) }}
+                            />
+                        </Col>
+
+                        {/* <Col md={6} className="mt-4 login-form-modal">
+                            <CheckBox
+                                label={t('logIn.Save_email_add')}
+                                type="checkbox"
+                                name="agree"
+                                id="agree"
+                                value="agree"
+                                styleCheck="checkmark"
+                                onChange={(e: any) => { setSaveEmail(true) }}
+                            />
+                        </Col> */}
+                    </Row>
+
+                </Modal.Body>
+                <Modal.Footer>
+                    <Buttons ButtonStyle="btn-customs w-100" onClick={Login}>{t('logIn.Log_In')}</Buttons>
+                </Modal.Footer>
+                <Row className="py-3">
+                    {/* <Col >
+                        <p className="already-account">{t('logIn.Dont_have_acc')}<span><Buttons ButtonStyle="trans-btn" onClick={() => { showsignupmodalbtn() }}>{t('signUp.Sign_Up')}</Buttons></span></p>
+                    </Col> */}
+                </Row>
+
+            </Modal>
+
+            <Modal
+                show={HRloginpopup} onHide={() => { setHRloginpopup(false) }}
+
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+
+                </Modal.Header>
+                <Modal.Body>
+                    <div className="modal-signup-title ">
+                        <h3>HR Login</h3>
+                    </div>
+                    <Row>
+                        <Col md={12}>
+                            <InputField
+                                label={t('Id')}
+                                fromrowStyleclass="mt-2"
+                                name="email"
+                                value={statelogin.email}
+                                placeholder={t('Id')}
                                 type="text"
                                 InputstyleClass={loginErrors.emailError ? "custom-input mb-0 danger-border" : "custom-input mb-0"}
                                 lablestyleClass="label-input-style"
@@ -1067,7 +1214,7 @@ const [value, onChange] = useState(new Date());
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Buttons ButtonStyle="btn-customs w-100" onClick={Login}>{t('logIn.Log_In')}</Buttons>
+                    <Buttons ButtonStyle="btn-customs w-100" onClick={Loginhr}>{t('logIn.Log_In')}</Buttons>
                 </Modal.Footer>
                 <Row className="py-3">
                     {/* <Col >
@@ -1076,7 +1223,6 @@ const [value, onChange] = useState(new Date());
                 </Row>
 
             </Modal>
-
 
             <Modal
                 show={forgotpasspopup} onHide={() => { setforgotpasspopup(false) }}
@@ -1126,11 +1272,11 @@ const [value, onChange] = useState(new Date());
                         <Col md={12} className="text-center">
                        
                             <Buttons ButtonStyle="btn-customs-transparent mr-md-2 btn-lg" onClick={() => { loginbtn() }} >
-                                <FontAwesomeIcon icon={faUser} className="mr-1" /> <span>{t ('Homepage.Hero.View_Hosts')}</span>
+                                <FontAwesomeIcon icon={faUser} className="mr-1" /> <span>Admin</span>
                             </Buttons>
 
-                            <Buttons ButtonStyle="btn-customs-transparent ml-md-2 mt-4 mt-md-0 btn-lg" onClick={()=> console.log("You clicked on the pink circle!")}>
-                                <FontAwesomeIcon icon={faCalendarCheck} className="mr-1" /> <span>{t ('Homepage.Hero.Host_MyOwn')}</span>
+                            <Buttons ButtonStyle="btn-customs-transparent ml-md-2 mt-4 mt-md-0 btn-lg" onClick={() => { loginbtnnew() }}>
+                                <FontAwesomeIcon icon={faCalendarCheck} className="mr-1" /> <span>HR</span>
                             </Buttons>
                         </Col>
                     </Row>

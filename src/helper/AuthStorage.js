@@ -31,7 +31,7 @@ class AuthStorage {
         localStorage.removeItem(STORAGEKEY.token);
         localStorage.removeItem(STORAGEKEY.userId);
         localStorage.removeItem(STORAGEKEY.userName);
-
+        localStorage.removeItem("Logincreantials");
         sessionStorage.removeItem(STORAGEKEY.token);
         sessionStorage.removeItem(STORAGEKEY.userId);
         sessionStorage.removeItem(STORAGEKEY.userName);

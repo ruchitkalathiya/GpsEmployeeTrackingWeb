@@ -480,6 +480,52 @@ const [value, onChange] = useState(new Date());
                     console.log(response);
                     setStatelogin(loginCredential);
                     AuthStorage.setStorageData(STORAGEKEY.token, response.data.accessToken, keepMeLogin);
+                    //localStorage.setItem("Logincreantials", "admin");
+                    delete response.data.accessToken;
+                    AuthStorage.setStorageJsonData(STORAGEKEY.userData, response.data.accessToken, keepMeLogin);
+                    setloginpopup(false);
+                    history.push("/dashboard");
+                }
+          })
+          .catch(function (error) {
+                setIncorrectPass(`${t ('logIn.Errors.IncorrectPass')}`)
+          });
+
+        console.log(statelogin.email);
+        
+    }
+
+    const Loginhr = () => {
+        setIsLoginSubmit(true)
+        if (!loginValidation()) {
+            return
+        }
+
+        // ApiPost('user/auth/login', {
+        //     email: statelogin.email,
+        //     password: statelogin.pass
+        // }).then((res: any) => {
+        //     setStatelogin(loginCredential);
+        //     AuthStorage.setStorageData(STORAGEKEY.token, res.data.token, keepMeLogin);
+        //     delete res.data.token;
+        //     AuthStorage.setStorageJsonData(STORAGEKEY.userData, res.data, keepMeLogin);
+        //     // setloginpopup(false);
+        //     history.push("/");
+        // })
+        // .catch((error) => {
+        //     setIncorrectPass(`${t ('logIn.Errors.IncorrectPass')}`)
+        // });
+
+        Axios.post('http://192.168.56.1:5000/api/auth/signin', {
+            userid: statelogin.email,
+            password: statelogin.pass
+          })
+          .then(function (response) {
+                if(response.data.status=="success"){
+                    console.log(response);
+                    setStatelogin(loginCredential);
+                    AuthStorage.setStorageData(STORAGEKEY.token, response.data.accessToken, keepMeLogin);
+                    localStorage.setItem("Logincreantials", "HR");
                     delete response.data.accessToken;
                     AuthStorage.setStorageJsonData(STORAGEKEY.userData, response.data.accessToken, keepMeLogin);
                     setloginpopup(false);
@@ -696,7 +742,7 @@ const [value, onChange] = useState(new Date());
                                  <Col lg={12} className="modal-signup p-0">
                                      <div className="modal-signup-title">
                                          <Form>
-                                             <h3>{t('Edd Employee')}</h3>
+                                             <h3>{t('Add Employee')}</h3>
                                              <Row>
                                                  <Col md={6}>
                                                      <InputField
