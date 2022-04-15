@@ -313,105 +313,117 @@ function Filterimage() {
                     placeholder="Filter Images"
                 />
 
+
+                <div className="user-list">
+                    {userdata && userdata.length > 1 && name? (
+
+                    <Row className="card-box mb-4">
+                        
+                    {console.log("uuu",userdata[0])}
+
+                                            <Col md={8} className="p-0">
+ 
+                             <div className="main-tour-card-data">
+                                    <div className="d-md-flex w-100">
+                                        <div className="tour-card-data">
+                                            <h4>{userdata[0].firstname}{" "}{userdata[0].lastname}</h4>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <div className="d-md-flex w-100">
+                                        <div className="tour-card-data">
+                                            <h4>{userdata[0].bDay}{'/'}{userdata[0].bMonth}{'/'}{userdata[0].bYear}</h4>
+                                        </div>
+                                    </div>
+
+                                    <div className="d-md-flex w-100">
+                                        <div className="tour-card-data">
+                                            <h4>Email{':-'}{userdata[0].email}</h4>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="d-md-flex w-100">
+                                        <div className="tour-card-data">
+                                            <h4>Gender{':-'}{userdata[0].gender}</h4>
+                                        </div>
+                                    </div>
+
+                                    <div className="d-md-flex w-100">
+                                        <div className="tour-card-data">
+                                            <h4>employeerole{':-'}SDE</h4>
+                                        </div>
+                                    </div>
+
+                                    <div className="d-md-flex w-100">
+                                        <div className="tour-card-data">
+                                            <h4>employeeselery{':-'}100050</h4>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    
+
+                                                {/* <div className="main-tour-card-data">
+
+                                                    <div className="d-md-flex w-100">
+                                                        <div className="tour-card-data">
+                                                            <h4>Latitute{':-'}{items?.employeelatitute}</h4>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="d-md-flex w-100">
+                                                        <div className="tour-card-data">
+                                                            <h4>Longitute{':-'}{items?.employeelongitute}</h4>
+                                                        </div>
+                                                    </div>
+                                                </div> */}
+                                                </div>
+                                            </Col>
+
+                                        </Row>   
+                    ) : (
+                    <h1>No results found!</h1>
+                    )}
+                </div>
+
                 <div className="user-list">
                     {userdata && userdata.length > 0 && name? (
-
-                        userdata.map((items:any) =>
+                            userdata.map((items:any) =>
                             // {getusers(items?.userid)}
                         <Row className="card-box mb-4">
     
+                            
                             <Col md={4} className="p-0">
                                 <div className="card-image-main">
                                     <img src={items?.employeeipath} className="w-100" />
                                 </div>
                             </Col>
+
                             <Col md={8} className="p-0">
-    
-                                <div className="main-tour-card-data">
-                                    <div className="d-md-flex w-100">
-                                        <div className="tour-card-data">
-                                            <h4>Date:-{' '}{items?.date}</h4>
-                                        </div>
-                                        <div className="tout-created ml-auto">
-                                            <p><span> {items?.country}  </span></p>
-                                        </div>
+                            <div className="main-tour-card-data">
+                                
+                                <div className="d-md-flex w-100">
+                                    <div className="tour-card-data">
+                                        <h4>Date{':-'}{items?.date}</h4>
                                     </div>
-
-                                    {/* <div className="d-md-flex w-100">
-                                        <div className="tour-card-data">
-                                            <h4>{items?.bDay}{'/'}{items?.bMonth}{'/'}{items?.bYear}</h4>
-                                        </div>
-                                    </div>
-
-                                    <div className="d-md-flex w-100">
-                                        <div className="tour-card-data">
-                                            <h4>Email{':-'}{items?.email}</h4>
-                                        </div>
-                                    </div>
-
-                                    <div className="d-md-flex w-100">
-                                        <div className="tour-card-data">
-                                            <h4>Mobile No{':-'}{items?.phonenumber}</h4>
-                                        </div>
-                                    </div>
-
-                                    <div className="d-md-flex w-100">
-                                        <div className="tour-card-data">
-                                            <h4>Gender{':-'}{items?.gender}</h4>
-                                        </div>
-                                    </div> */}
-
-                                    
-
-                                    <div className="d-flex w-100">
-                                        {/* <div className="tour-card-address">
-                                            <h4>{items?.tourcity} </h4>
-                                            <div className="d-flex mt-2">
-                                                <div>
-                                                    <FontAwesomeIcon icon={faStar} className="fill-star" />
-                                                    <FontAwesomeIcon icon={faStar} className="fill-star" />
-                                                    <FontAwesomeIcon icon={faStar} className="fill-star" />
-                                                    <FontAwesomeIcon icon={faStar} className="fill-star" />
-                                                    <FontAwesomeIcon icon={faStar} />
-                                                </div>
-                                                <div className="ml-4 star-reviews">
-                                                    <p> {items?.tourstar} ∙ Reviews {items?.tourtotalreview} </p>
-                                                </div>
-                                            </div>
-                                        </div> */}
-                                        {/* <div className="tout-created ml-auto">
-                                            <div className="download-heart-icon button d-flex">
-                                                <div className="heart-div">
-                                                    <input type="checkbox" id={items?.id} className="instruments" />
-                                                    <label htmlFor={items?.id} className="text-white check" ><img src="./img/heart.png" className=" w-20" /></label>
-                                                </div>
-                                            </div>
-                                        </div> */}
-                                    </div>
-
-                                    {/* <div className="tages">
-                                        {items?.tourtages.map((tourtag: any) =>
-                                            <p className="single-tag">
-                                                {tourtag}
-                                            </p>
-                                        )}
-
-                                    </div>
-                            */}
-                                    {/* <div className="d-md-flex w-100">
-                                        <div className="tour-card-data-date">
-                                            <h4>{items?.tourdate}</h4>
-                                        </div>
-                                        <div className="tout-created-host ml-auto">
-                                            <p>  <span> {items?.employeerole} </span></p>
-                                        </div>
-                                    </div> */}
                                 </div>
+
+
+                               
+                            </div>
                             </Col>
+    
+                                
+                        
     
                         </Row>
                         
-                                )
+                        )
+                        )
                     // userdata.map((user:any) => (
                     //     <li key={user.id} className="user">
                     //     <span className="user-id">{user.id}</span>
@@ -419,8 +431,8 @@ function Filterimage() {
                     //     <span className="user-age">{user.age} year old</span>
                     //     </li>
                     // ))
-                    ) : (
-                    <h1>No results found!</h1>
+                     : (
+                    <></>
                     )}
                 </div>
 

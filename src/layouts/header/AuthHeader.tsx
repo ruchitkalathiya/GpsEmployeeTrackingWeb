@@ -6,6 +6,7 @@ import i18next from 'i18next';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarCheck, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import AuthStorage from '../../helper/AuthStorage';
 
 const AuthHeader: React.FC =() => {
     const {t} = useTranslation();
@@ -46,11 +47,11 @@ const AuthHeader: React.FC =() => {
                                 </Buttons> */}
 
                                 <div className="footer-link">
-                                    {/* <Link to="/dashboard">{'Add Employee'}</Link> */}
+                                    <Link to="/dashboard">{'Add Employee'}</Link>
                                     <Link to="/viewloaction">{'View Location'}</Link>
                                     <Link to="/Viewimage">{'View Image'}</Link>
                                     {/* <Link to="/">{'Change Password'}</Link> */}
-                                    <Link to="/">{'Logout'}</Link>
+                                    <Link to="/" onClick={()=> AuthStorage.deauthenticateUser()}>{'Logout'}</Link>
                                 </div>
                             </Nav>
                         </Navbar.Collapse>
