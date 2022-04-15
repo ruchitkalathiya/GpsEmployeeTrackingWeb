@@ -1,3 +1,12 @@
+## *LINKS:-*
+Github Link of Mobile App:- https://github.com/VIVEK172001/GpsEmployeeTrackingMobile 
+
+Github Link of Nodejs Backend:- https://github.com/VIVEK172001/GpsEmployeeTrackingBackend
+
+Video Link:- https://drive.google.com/drive/folders/1PBhFDp3yVSWZmapF7JaAajSQrWqnf-XM?usp=sharing 
+
+Blog Link:- https://gpstrackingandimagecapture.blogspot.com/2022/04/automated-images-capture-and-gps.html 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
